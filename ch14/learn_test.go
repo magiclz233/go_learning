@@ -105,7 +105,7 @@ func TestArrMore(t *testing.T) {
 	fmt.Println(arr0, arr1, a, b)
 }
 
-//因为go是值拷贝,会造成性能问题  所以相对于数组的复用来说 slice(切片)或者数组指针用的更多
+//因为go是值拷贝,会造成性能问题  所以相对于数组的复用来说 slice(指针)或者数组指针用的更多
 
 func arr(x [2]int) {
 	fmt.Printf("x, %p\n", &x)
@@ -383,5 +383,34 @@ func TestSome(t *testing.T) {
 	s2 := slice[:4:6]
 	fmt.Println(s1, len(s1), cap(s1))
 	fmt.Println(s2, len(s2), cap(s2))
+}
 
+func TestMap1(t *testing.T) {
+	ages := map[string]int{}
+	ages["magic"] = 1
+	ages["root"] = 2
+	// ok用来判断你获取的元素是否存在 不存在返回false
+	age, ok := ages["r"]
+	fmt.Println(age, ok)
+
+	test := make(map[string]int)
+	test["magic"] = 1
+	test["root"] = 2
+
+	isOk := equals(ages, test)
+	fmt.Println(isOk)
+}
+
+func equals(x, y map[string]int) bool {
+	if len(x) != len(y) {
+		return false
+	}
+
+	for k, xv := range x {
+		if yv, ok := y[k]; !ok || yv != xv {
+			fmt.Println(!ok)
+			return false
+		}
+	}
+	return true
 }
