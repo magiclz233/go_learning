@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d088778-864b-4059-85b2-8a8c0211a0ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch10/func/func_ops_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch10/func/func_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch10/函数.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch11/build_test/build_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch11/go行为的定义和实现.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch12/extension/extension_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch12/extension/扩展与复用.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch12/go的接口.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch12/interface_test/costomer_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch12/interface_test/interface_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch13/interface_test/interface_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch13/interface_test/null_interface_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch13/多态.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch13/空接口与断言.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1d088778-864b-4059-85b2-8a8c0211a0ca" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
