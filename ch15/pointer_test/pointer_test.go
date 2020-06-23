@@ -2,7 +2,10 @@ package pointer_test
 
 import (
 	"fmt"
+	"math/rand"
+	"sort"
 	"testing"
+	"time"
 )
 
 // 指针
@@ -173,4 +176,28 @@ func TestSliceMap(t *testing.T) {
 
 	sliceMap[key] = value
 	fmt.Println(sliceMap)
+}
+
+// 按照指定顺序遍历map
+func TestMapIterator(t *testing.T) {
+	rand.Seed(time.Now().UnixNano()) // 初始化随机数种子
+
+	scoreMap := make(map[string]int, 200)
+
+	for i := 1; i < 100; i++ {
+		key := fmt.Sprintf("stu%02d", i)
+		value := rand.Intn(100)
+		scoreMap[key] = value
+	}
+
+	keys := make([]string, 0, 200)
+	for key, _ := range scoreMap {
+		keys = append(keys, key)
+	}
+
+	sort.Strings(keys)
+
+	for _, key := range keys {
+		fmt.Println(key, scoreMap[key])
+	}
 }
