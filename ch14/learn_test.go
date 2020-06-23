@@ -414,3 +414,78 @@ func equals(x, y map[string]int) bool {
 	}
 	return true
 }
+
+//函数
+func TestFunc1(t *testing.T) {
+	nextInt := intSeq()
+	//不同的创建实例之后,数据互不相同
+
+	fmt.Println(nextInt()) //1
+	fmt.Println(nextInt()) //2
+	fmt.Println(nextInt()) //3
+
+	newInt := intSeq()
+	fmt.Println(newInt()) //1
+}
+
+//闭包,匿名函数
+func intSeq() func() int {
+	i := 0
+	return func() int {
+		i += 1
+		return i
+	}
+}
+
+//可变参数加多返回值函数
+func TestFunc2(t *testing.T) {
+	nums := []int{1, 2, 3, 4, 5, 6}
+	total, multiply := sumAndMultiply(nums...)
+	fmt.Println(total, multiply)
+
+	fact := fact(7)
+	fmt.Println(fact)
+}
+
+//可变参数加多返回值函数
+func sumAndMultiply(nums ...int) (int, int) {
+	fmt.Print(nums, " ")
+	total := 0
+	multiply := 1
+	for _, num := range nums {
+		total += num
+	}
+	for _, num := range nums {
+		multiply *= num
+	}
+	return total, multiply
+}
+
+// 递归
+func fact(n int) int {
+	if n == 0 {
+		return 1
+	}
+	return n * fact(n-1)
+}
+
+//指针
+func TestPointer(t *testing.T) {
+	i := 1
+	fmt.Println("初始化的i : ", i) // 1
+
+	val(i)
+	fmt.Println("值传递之后,main函数中的 i : ", i) // 1
+
+	point(&i)
+	fmt.Println("引用传递之后,main函数中的 i : ", i) // 0
+
+}
+
+func val(val int) {
+	val = 0
+}
+
+func point(point *int) {
+	*point = 0
+}
