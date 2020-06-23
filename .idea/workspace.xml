@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d088778-864b-4059-85b2-8a8c0211a0ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ch11/struct_test/struct_test.go" afterDir="false" />
+    <list default="true" id="1d088778-864b-4059-85b2-8a8c0211a0ca" name="Default Changelist" comment="idea file">
+      <change afterPath="$PROJECT_DIR$/ch15/client/package_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ch15/remote_package/remote_package_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ch15/series/my_series.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ch15/构建可复用的模块(包)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ch16/groutine/groutine_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ch17/share_mem/share_mem_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ch18/csp/csp_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch15/pointer_test/pointer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/ch15/pointer_test/pointer_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch5/condition/condition_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/ch5/condition/condition_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch15/pointer_test/pointer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/ch14/pointer_test/pointer_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch15/指针" beforeDir="false" afterPath="$PROJECT_DIR$/ch14/pointer_test/指针" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="go_learning" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -22,9 +26,10 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="D:\tools\Golang\go1.14.4" />
+  <component name="GOROOT" path="F:\tools\Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1aNdqJarGPzCGNALZBWf8jbwPj7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -41,6 +46,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/ch15/series/my_series.go" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
@@ -52,76 +58,80 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\GoProject\GoTest\src\go_learning\ch14\pointer_test" />
+      <recent name="F:\GoProject\GoTest\src\go_learning\ch14" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\GoProject\GoTest\src\go_learning\ch12\extension" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestIf in go_learning/ch5/condition">
-    <configuration name="TestIf in go_learning/ch5/condition" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestAsynService in go_learning/ch18/csp">
+    <configuration name="TestAsynService in go_learning/ch18/csp" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/ch5/condition" />
+      <working_directory value="$PROJECT_DIR$/ch18/csp" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_learning/ch5/condition" />
+      <package value="go_learning/ch18/csp" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestIf$" />
+      <pattern value="^TestAsynService$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSliceStruct in go_learning/ch11/struct_test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCounter in go_learning/ch17/share_mem" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/ch11/struct_test" />
+      <working_directory value="$PROJECT_DIR$/ch17/share_mem" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_learning/ch11/struct_test" />
+      <package value="go_learning/ch17/share_mem" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSliceStruct$" />
+      <pattern value="^TestCounter$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestStruct2 in go_learning/ch11/struct_test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCounterThreadSafe in go_learning/ch17/share_mem" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/ch11/struct_test" />
+      <working_directory value="$PROJECT_DIR$/ch17/share_mem" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_learning/ch11/struct_test" />
+      <package value="go_learning/ch17/share_mem" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestStruct2$" />
+      <pattern value="^TestCounterThreadSafe$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestStructJson in go_learning/ch11/struct_test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGroutine in go_learning/ch16/groutine" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/ch11/struct_test" />
+      <working_directory value="$PROJECT_DIR$/ch16/groutine" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_learning/ch11/struct_test" />
+      <package value="go_learning/ch16/groutine" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestStructJson$" />
+      <pattern value="^TestGroutine$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestStructJson2 in go_learning/ch11/struct_test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestService in go_learning/ch18/csp" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/ch11/struct_test" />
+      <working_directory value="$PROJECT_DIR$/ch18/csp" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_learning/ch11/struct_test" />
+      <package value="go_learning/ch18/csp" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestStructJson2$" />
+      <pattern value="^TestService$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestIf in go_learning/ch5/condition" />
-        <item itemvalue="Go Test.TestSliceStruct in go_learning/ch11/struct_test" />
-        <item itemvalue="Go Test.TestStructJson2 in go_learning/ch11/struct_test" />
-        <item itemvalue="Go Test.TestStructJson in go_learning/ch11/struct_test" />
-        <item itemvalue="Go Test.TestStruct2 in go_learning/ch11/struct_test" />
+        <item itemvalue="Go Test.TestAsynService in go_learning/ch18/csp" />
+        <item itemvalue="Go Test.TestService in go_learning/ch18/csp" />
+        <item itemvalue="Go Test.TestCounterThreadSafe in go_learning/ch17/share_mem" />
+        <item itemvalue="Go Test.TestCounter in go_learning/ch17/share_mem" />
+        <item itemvalue="Go Test.TestGroutine in go_learning/ch16/groutine" />
       </list>
     </recent_temporary>
   </component>
@@ -129,14 +139,10 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="go test" />
-    <option name="LAST_COMMIT_MESSAGE" value="go test" />
+    <MESSAGE value="idea file" />
+    <option name="LAST_COMMIT_MESSAGE" value="idea file" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="179" key="#GOROOT" timestamp="1592879912858">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="179" key="#GOROOT/0.0.1920.1040@0.0.1920.1040" timestamp="1592879912858" />
     <state x="552" y="178" key="#Inspections" timestamp="1587198023647">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -149,54 +155,69 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586581166156" />
-    <state x="711" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592879979206">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="970" y="503" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592916194363">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="711" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592879979206" />
+    <state x="970" y="503" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592916194363" />
     <state x="664" y="162" key="#go_build_go_learning/ch1" timestamp="1586581190716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="664" y="162" key="#go_build_go_learning/ch1/0.0.1920.1040@0.0.1920.1040" timestamp="1586581190716" />
-    <state x="560" y="112" key="CommitChangelistDialog2" timestamp="1592879936504">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="873" y="291" key="CommitChangelistDialog2" timestamp="1592928316994">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="560" y="112" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592879936504" />
-    <state x="184" y="92" key="DiffContextDialog" timestamp="1592879922775">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="873" y="291" key="CommitChangelistDialog2/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592928316994" />
+    <state x="250" y="129" key="DiffContextDialog" timestamp="1592928238058">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="184" y="92" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592879922775" />
-    <state x="751" y="275" key="FileChooserDialogImpl" timestamp="1586581053195">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="250" y="129" key="DiffContextDialog/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592928238058" />
+    <state x="1001" y="370" key="FileChooserDialogImpl" timestamp="1592918928212">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="751" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586581053195" />
-    <state width="1877" height="269" key="GridCell.Tab.0.bottom" timestamp="1592904897733">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1001" y="370" key="FileChooserDialogImpl/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592918928212" />
+    <state width="2517" height="610" key="GridCell.Tab.0.bottom" timestamp="1592928210881">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592904897733" />
-    <state width="1877" height="269" key="GridCell.Tab.0.center" timestamp="1592904897733">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1349" height="299" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587374806320" />
+    <state width="2517" height="610" key="GridCell.Tab.0.bottom/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592928210881" />
+    <state width="2517" height="610" key="GridCell.Tab.0.center" timestamp="1592928210881">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592904897733" />
-    <state width="1877" height="269" key="GridCell.Tab.0.left" timestamp="1592904897733">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1349" height="299" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587374806320" />
+    <state width="2517" height="610" key="GridCell.Tab.0.center/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592928210881" />
+    <state width="2517" height="610" key="GridCell.Tab.0.left" timestamp="1592928210881">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592904897733" />
-    <state width="1877" height="269" key="GridCell.Tab.0.right" timestamp="1592904897733">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1349" height="299" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587374806319" />
+    <state width="2517" height="610" key="GridCell.Tab.0.left/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592928210881" />
+    <state width="2517" height="610" key="GridCell.Tab.0.right" timestamp="1592928210881">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592904897733" />
-    <state x="597" y="155" key="SettingsEditor" timestamp="1592894192443">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1349" height="299" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587374806320" />
+    <state width="2517" height="610" key="GridCell.Tab.0.right/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592928210881" />
+    <state x="988" y="416" key="MultipleFileMergeDialog" timestamp="1592915773282">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="597" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592894192443" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1592894100704">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="988" y="416" key="MultipleFileMergeDialog/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592915773282" />
+    <state x="796" y="209" key="SettingsEditor" timestamp="1592918939531">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1592894100704" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1592879941296">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="597" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586877760373" />
+    <state x="796" y="209" key="SettingsEditor/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592918939531" />
+    <state width="664" height="601" key="SwitcherDM" timestamp="1592917848380">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592879941296" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1586791342133" />
+    <state width="664" height="601" key="SwitcherDM/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592917848380" />
+    <state x="873" y="434" key="Vcs.Push.Dialog.v2" timestamp="1592928300051">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="873" y="434" key="Vcs.Push.Dialog.v2/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592928300051" />
+    <state x="1063" y="618" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592915761567">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1063" y="618" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/3840.457.1920.1040@0.0.2560.1400" timestamp="1592915761567" />
     <state x="1182" y="140" key="refactoring.ChangeSignatureDialog" timestamp="1587280427184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
