@@ -1,0 +1,7 @@
+go中最基础的可复用模块为包 package 如ch15中的series包 就是一个可以服用的包
+
+在client中package_test.go 中,import "go_learning/ch15/series"
+然后就可以调用series包中的东西了
+
+每个包中可以有多个文件 但是报名需要相同
+函数名不能重复 除了init
