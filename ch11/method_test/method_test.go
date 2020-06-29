@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"testing"
+	"time"
 )
 
 //方法声明
@@ -102,4 +103,36 @@ func (list IntList) Sum() int {
 	return list.Value + list.Tail.Sum()
 }
 
+//闭包 相当于匿名函数
+func returnNum() func(a, b int) (int, int) {
+	return func(a, b int) (int, int) {
+		return a, b
+	}
+}
+
+func TestSFunc(t *testing.T) {
+	numFunc := returnNum()
+	a, b := numFunc(1, 2)
+	fmt.Println(a, b)
+}
+
 // 通过嵌入结构体来扩展类型
+
+func TestSelect(t *testing.T) {
+	tick := time.Tick(time.Millisecond * 100)
+	boom := time.After(time.Millisecond * 500)
+	for {
+		select {
+		// 100毫秒运行一次
+		case <-tick:
+			fmt.Println("tick.")
+		//	500毫秒运行榆次
+		case <-boom:
+			fmt.Println("boom.")
+		//	50毫秒运行一次
+		default:
+			fmt.Println(".......")
+			time.Sleep(time.Millisecond * 50)
+		}
+	}
+}
