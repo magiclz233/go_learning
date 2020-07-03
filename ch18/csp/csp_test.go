@@ -40,5 +40,5 @@ func AsyncService() chan string {
 func TestAsynService(t *testing.T) {
 	retCh := AsyncService()
 	otherTask()
-	fmt.Println(<-retCh)
+	fmt.Println("retCh", <-retCh)
 }
