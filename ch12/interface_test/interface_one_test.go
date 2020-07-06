@@ -106,3 +106,69 @@ func TestInterfaceNest(t *testing.T) {
 	a.say()
 	a.move()
 }
+
+// 空接口
+
+// 空接口可以存储任意类型值, 相当于java中的Object 用空接口当参数可以接收任何类型的数据
+func show(a interface{}) {
+	fmt.Printf("type: %T, value: %t\n", a, a)
+}
+
+func TestNullInterface(t *testing.T) {
+	show("type string")
+	show(123)
+	show(111.11)
+	show([]int{1, 2, 3})
+
+	var studentInfo = make(map[string]interface{})
+	studentInfo["name"] = "magic"
+	studentInfo["age"] = 18
+	studentInfo["sex"] = "男"
+	studentInfo["married"] = false
+
+	fmt.Println(studentInfo)
+}
+
+// 类型断言
+
+// 该语法返回两个参数，第一个参数是x转化为T类型后的变量，第二个值是一个布尔值，若为true则表示断言成功，为false则表示断言失败。
+
+func switchType(x interface{}) {
+	switch v := x.(type) {
+	case string:
+		fmt.Printf("x is a string, value is %v\n", v)
+	case int:
+		fmt.Printf("x is a int, value is %d\n", v)
+	case bool:
+		fmt.Printf("x is a bool, value is %v\n", v)
+	case float64:
+		fmt.Printf("x is a float64, value is %v\n", v)
+	default:
+		fmt.Println("un support type!")
+	}
+}
+
+func TestInterface(t *testing.T) {
+	var x interface{}
+	x = "magic"
+	v, ok := x.(string)
+	if ok {
+		fmt.Println(v)
+	} else {
+		fmt.Println("类型错误")
+	}
+
+	x = 123
+	i, ok1 := x.(int)
+	if ok1 {
+		fmt.Println(i)
+	} else {
+		fmt.Println("类型错误")
+	}
+
+	switchType("magic")
+	switchType(123)
+	switchType(true)
+	switchType(11.111)
+	switchType([...]int{1, 2, 3})
+}
