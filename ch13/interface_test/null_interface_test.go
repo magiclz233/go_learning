@@ -98,5 +98,4 @@ func TestElement(t *testing.T) {
 	el.Set(1, 1)
 	el.Set(2, [...]int{1, 2, 3})
 	el.Set(3, true)
-
 }
