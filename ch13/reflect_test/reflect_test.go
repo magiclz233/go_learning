@@ -24,7 +24,7 @@ func (d Day) String() string {
 	return dayName[d]
 }
 
-func print(args ...interface{}) {
+func prints(args ...interface{}) {
 	for i, arg := range args {
 		if i > 0 {
 			_, _ = os.Stdout.WriteString(" ")
@@ -43,5 +43,5 @@ func print(args ...interface{}) {
 }
 
 func TestStr(t *testing.T) {
-	print(Day(1), "was", Celsius(18.32))
+	prints(Day(1), "was", Celsius(18.32))
 }
