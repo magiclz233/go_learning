@@ -13,10 +13,10 @@ func TestPanicVxExit(t *testing.T) {
 	//finally块相同作用
 	defer func() {
 		fmt.Println("defer")
-		// recover 相当于java的try-catch,获取到所有的错误
+		// recover_test 相当于java的try-catch,获取到所有的错误
 		if err := recover(); err != nil {
 
-			fmt.Println("recover from ", err)
+			fmt.Println("recover_test from ", err)
 		}
 	}()
 	fmt.Println("start")
