@@ -2,7 +2,7 @@
 
 一个用来学习Go语言的仓库,包含了:
 
-* [go_base](https://github.com/magiclz233/go_learning/tree/master/go_base) Go的基础语法部分, 
+* [go_base](https://github.com/magiclz233/go_learning/tree/master/go_base) Go的基础语法部分
 * [gin]()框架学习
 * learning
 
