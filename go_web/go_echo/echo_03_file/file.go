@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"io"
+	"net/http"
 	"os"
 )
 
@@ -28,6 +30,7 @@ func uploadFile(c echo.Context) error {
 		return err
 	}
 
+	return c.HTML(http.StatusOK, fmt.Sprintf("<p>文件上传成功: %s</p>", file.Filename))
 }
 
 func main() {
@@ -37,5 +40,6 @@ func main() {
 
 	e.Static("/", "public")
 	e.POST("/upload", uploadFile)
+	e.POST("/upload/files", uploadFiles)
 	e.Logger.Fatal(e.Start(":1323"))
 }
