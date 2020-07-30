@@ -19,7 +19,11 @@
 
 后续也会一直补充!
 
-## go_gin
+## go_web
+
+对Golang来开发web应用的学习,主要学习gin,echo等框架的使用.
+
+### go_gin
 
 对gin框架的学习
 
