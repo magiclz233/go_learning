@@ -3,13 +3,17 @@
 一个用来学习Go语言的仓库,包含了:
 
 * [go_base](https://github.com/magiclz233/go_learning/tree/master/go_base) Go的基础语法部分
-* [gin]()框架学习
+* [go_web](https://github.com/magiclz233/go_learning/tree/master/go_web) Go Web以及web框架学习
+    * [echo](https://github.com/magiclz233/go_learning/tree/master/go_web/go_echo) echo框架学习
+    * [gin](https://github.com/magiclz233/go_learning/tree/master/go_web/go_gin) gin框架学习
+    
 * learning
 
 ## base
 
 本项目使用的go版本为1.14, 建议使用1.13以上版本, 编辑器使用的是GoLand, 其他idea,vscode也可以
 
+其中 go_base基础模块使用的GOPATH形式练习, go_web使用go mod形式
 
 ## go_base
 
@@ -38,7 +42,13 @@ go env -w GO111MODULE=on
 go env -w GOPROXY=https://goproxy.io,direct
 ```
 
-控制台切换到../go_gin目录,执行 go mod download 命令,下载所需的jar包
+控制台切换到../go_gin目录,执行 go mod download/go mod tidy 命令,下载所需的jar包
+
+## go_echo
+
+对 echo web框架的学习
+
+基本上和gin差不多,看一个就可以快速了解第二个, 基础配置也相同
 
 ## end
 
