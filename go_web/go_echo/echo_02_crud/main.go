@@ -6,7 +6,7 @@ func main() {
 	e := echo.New()
 	e.POST("/users", saveUser)
 	e.GET("/users/:id", getUser)
-	e.PUT("/users/:id", updateUser)
+	e.PUT("/users", updateUser)
 	e.DELETE("/users/:id", deleteUser)
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(":1323"))
 }

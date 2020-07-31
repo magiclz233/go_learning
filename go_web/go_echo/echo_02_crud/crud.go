@@ -49,14 +49,13 @@ func updateUser(c echo.Context) error {
 	if err := c.Bind(u); err != nil {
 		return err
 	}
-	id, _ := strconv.Atoi(c.Param("id"))
-	for _, user := range users {
-		if id == user.Id {
-			user = *u
-			return c.JSON(http.StatusOK, user)
+	for i, user := range users {
+		if u.Id == user.Id {
+			users[i] = *u
+			return c.JSON(http.StatusOK, users)
 		}
 	}
-	return c.String(404, "没有找到该id: "+strconv.Itoa(id)+" 对应的用户")
+	return c.String(404, "没有找到该id: "+strconv.Itoa(u.Id)+" 对应的用户")
 }
 
 func deleteUser(c echo.Context) error {
