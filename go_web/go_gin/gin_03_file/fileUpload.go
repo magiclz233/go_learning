@@ -9,7 +9,7 @@ import (
 func uploadFile(c *gin.Context) {
 	file, err := c.FormFile("file")
 	if err != nil {
-		c.String(500, "上传图片出错")
+		c.String(500, "上传文件出错")
 	}
 	if file != nil {
 		err = c.SaveUploadedFile(file, "E:\\"+file.Filename)
@@ -26,7 +26,7 @@ func uploadFiles(c *gin.Context) {
 		c.String(http.StatusBadRequest, fmt.Sprintf("get err %s", err.Error()))
 	}
 	if form != nil {
-		// 获取所有图片
+		// 获取所有文件
 		files := form.File["files"]
 		// range 遍历
 		for _, file := range files {
