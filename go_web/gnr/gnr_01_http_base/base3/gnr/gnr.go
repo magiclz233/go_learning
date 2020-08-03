@@ -26,17 +26,17 @@ func (e *Engine) addRouter(method, pattern string, handler HandlerFunc) {
 }
 
 // GET定义添加GET请求的方法
-func (e Engine) GET(pattern string, handler HandlerFunc) {
+func (e *Engine) GET(pattern string, handler HandlerFunc) {
 	e.addRouter("GET", pattern, handler)
 }
 
 // POST定义添加POST请求的方法
-func (e Engine) POST(pattern string, handler HandlerFunc) {
+func (e *Engine) POST(pattern string, handler HandlerFunc) {
 	e.addRouter("POST", pattern, handler)
 }
 
 // 启动http server
-func (e Engine) Run(add string) error {
+func (e *Engine) Run(add string) error {
 	return http.ListenAndServe(add, e)
 }
 
