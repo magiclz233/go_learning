@@ -1,6 +1,9 @@
 package main
 
-import "go_learning/go_base/ch19_reflect/reflect"
+import (
+	"fmt"
+	"go_learning/go_base/ch19_reflect/reflect"
+)
 
 type UserFloat float64
 
@@ -24,4 +27,12 @@ func main() {
 	reflect.StructReflect(u)
 
 	reflect.StructAnon(b)
+
+	// 反射修改结构体信息  传入的必须为结构体的指针
+	reflect.StructUpdate(&u, "Faker")
+	fmt.Println(u)
+
+	reflect.StructFunc(&u, "Hello")
+
+	reflect.StructTag(&u, "json", "db")
 }
