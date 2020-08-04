@@ -15,10 +15,26 @@ func (u *User) Hello() {
 	fmt.Printf("Hello %s", u.Name)
 }
 
+type Boy struct {
+	User
+	Addr string
+}
+
+// 获取结构体匿名字段
+func StructAnon(o interface{}) {
+	t := reflect.TypeOf(o)
+	fmt.Println("类型: ", t)
+
+	fmt.Printf("%#v\n", t.Field(0))
+
+	fmt.Printf("%#v\n", reflect.ValueOf(o).Field(0))
+}
+
+// 获取结构体的类型和值
 func StructReflect(o interface{}) {
 	t := reflect.TypeOf(o)
 	fmt.Println("类型: ", t)
-	fmt.Println("Name字符串类型: ", t.Name())
+	fmt.Println("字符串类型: ", t.Name())
 
 	v := reflect.ValueOf(o)
 	fmt.Println("值: ", v)

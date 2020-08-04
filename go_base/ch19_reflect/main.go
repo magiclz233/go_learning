@@ -17,5 +17,11 @@ func main() {
 		Age:  23,
 	}
 
+	b := reflect.Boy{
+		User: u,
+		Addr: "西安",
+	}
 	reflect.StructReflect(u)
+
+	reflect.StructAnon(b)
 }
