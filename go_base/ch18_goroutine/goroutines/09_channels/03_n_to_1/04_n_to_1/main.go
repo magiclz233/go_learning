@@ -3,6 +3,13 @@ package main
 import "fmt"
 
 func main() {
+
+	for n := range test() {
+		fmt.Println(n)
+	}
+}
+
+func test() chan int {
 	n := 10
 	c := make(chan int)
 	done := make(chan bool)
@@ -22,9 +29,5 @@ func main() {
 		}
 		close(c)
 	}()
-
-	for n := range c {
-		fmt.Println(n)
-
-	}
+	return c
 }
