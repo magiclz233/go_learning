@@ -22,7 +22,7 @@ func main() {
 func incrementer(s string) {
 	for i := 0; i < 20; i++ {
 		time.Sleep(time.Duration(rand.Intn(3)) * time.Millisecond)
-		j := atomic.AddInt64(&count, 2)
+		j := atomic.AddInt64(&count, 1)
 		fmt.Println(j)
 		fmt.Println(s, i, "Count : ", atomic.LoadInt64(&count))
 	}
