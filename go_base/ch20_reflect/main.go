@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go_learning/go_base/ch19_reflect/reflect"
+	"go_learning/go_base/ch20_reflect/reflect"
 )
 
 type UserFloat float64

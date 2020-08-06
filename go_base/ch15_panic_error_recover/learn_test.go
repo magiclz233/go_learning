@@ -1,4 +1,4 @@
-package ch14_test
+package ch15_panic_error_recover_test
 
 import (
 	"fmt"

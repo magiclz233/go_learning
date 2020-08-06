@@ -2,7 +2,7 @@ package sort_test
 
 import (
 	"fmt"
-	"go_learning/go_base/ch13/sort"
+	"go_learning/go_base/ch13_interface_more/sort"
 	"testing"
 )
 

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 )
-import "go_learning/go_base/ch15/series"
+import "go_learning/go_base/ch16_package/series"
 
 func TestPackage(t *testing.T) {
 	fibList := make([]int, 0)

@@ -9,7 +9,7 @@ import (
 )
 
 func inputFile() {
-	inputFile, inputError := os.Open("ch13.5/file_io_test/input.txt")
+	inputFile, inputError := os.Open("ch13_interface_more.5/file_io_test/input.txt")
 	if inputError != nil {
 		fmt.Println("上传文件出现错误", inputError)
 		return
@@ -27,7 +27,7 @@ func inputFile() {
 }
 
 func inputFileBuf() {
-	inputFile, inputError := os.Open("ch13.5/file_io_test/input.txt")
+	inputFile, inputError := os.Open("ch13_interface_more.5/file_io_test/input.txt")
 	if inputError != nil {
 		fmt.Println("上传文件出现错误", inputError)
 		return
@@ -55,8 +55,8 @@ func main() {
 }
 
 func outPutFile() {
-	inputFile := "ch13.5/file_io_test/input.txt"
-	outPutFile := "ch13.5/file_io_test/inputCopy.txt"
+	inputFile := "ch13_interface_more.5/file_io_test/input.txt"
+	outPutFile := "ch13_interface_more.5/file_io_test/inputCopy.txt"
 	buf, err2 := ioutil.ReadFile(inputFile)
 	if err2 != nil {
 		_, _ = fmt.Fprintf(os.Stderr, "File error: %s\n", err2)
@@ -69,7 +69,7 @@ func outPutFile() {
 }
 
 func Fscanln() {
-	inputFile, inputError := os.Open("ch13.5/file_io_test/input.txt")
+	inputFile, inputError := os.Open("ch13_interface_more.5/file_io_test/input.txt")
 	if inputError != nil {
 		panic(inputError.Error())
 	}
