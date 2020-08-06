@@ -12,13 +12,13 @@ var counter int
 
 func main() {
 	wg.Add(2)
-	go incrementor("Foo:")
-	go incrementor("Bar:")
+	go incrementer("Foo:")
+	go incrementer("Bar:")
 	wg.Wait()
 	fmt.Println("Final Counter:", counter)
 }
 
-func incrementor(s string) {
+func incrementer(s string) {
 	rand.Seed(time.Now().UnixNano())
 	for i := 0; i < 20; i++ {
 		x := counter
@@ -30,6 +30,13 @@ func incrementor(s string) {
 	wg.Done()
 }
 
+/*
+	counter 未加锁 同时启动两个协程访问 incrementer方法
+	counter 因为未加锁的原因会出现当一个正在执行++操作时,另外一个获取到了之前的值,
+	最后导致counter最终结果不为预期的40
+	如何解决: 1. sync.Mutex 互斥锁
+			2. atomic 原子类
+*/
 // go run -race main.go
 // vs
 // go run main.go
