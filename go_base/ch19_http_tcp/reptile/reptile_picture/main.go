@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -21,7 +22,7 @@ func HandlerError(err error, why string) {
 func DownloadFile(url string, fileName string) (ok bool) {
 	fmt.Println(url)
 	res, err := http.Get(url)
-	baseSrc := `F:\picture\`
+	baseSrc := "F:\\picture\\"
 	_, isExistErr := os.Stat(baseSrc)
 	if os.IsNotExist(isExistErr) {
 		err := os.Mkdir(baseSrc, os.ModePerm)
@@ -58,13 +59,24 @@ var (
 )
 
 func main() {
+	var url string
+	var path string
+	flag.StringVar(&url, "url", "", "图片网站链接")
+	str, _ := os.Getwd()
+	fmt.Println("当前文件路径: " + str)
+	flag.StringVar(&path, "path", str, "本地下载地址")
+
+	if url == "" {
+		fmt.Println("网站链接为空!")
+		return
+	}
 	// 1. 初始化管道
 	chanImageUrls = make(chan string, 1000000)
 	chanTask = make(chan string, 26)
 	// 2. 爬虫协程
 	for i := 1; i < 27; i++ {
 		waitGroup.Add(1)
-		go getImgUrls("https://www.bizhizu.cn/shouji")
+		go getImgUrls(url)
 		//go getImgUrls("https://www.bizhizu.cn/shouji/tag-%E5%8F%AF%E7%88%B1/" + strconv.Itoa(i) + ".html")
 	}
 	// 3. 任务统计协程 统计26个协程是否都任务完成, 完成则关闭管道
