@@ -23,7 +23,7 @@ func GetEmail() {
 	// 字节转字符串
 	pageStr := string(pageBytes)
 	// 过滤数据 获取QQ邮箱
-	re := regexp.MustCompile(pageStr)
+	re := regexp.MustCompile(reQQEmail)
 	// -1代表取全部
 	results := re.FindAllStringSubmatch(pageStr, -1)
 

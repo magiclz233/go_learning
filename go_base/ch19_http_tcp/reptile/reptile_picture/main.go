@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -18,8 +19,16 @@ func HandlerError(err error, why string) {
 }
 
 func DownloadFile(url string, fileName string) (ok bool) {
+	fmt.Println(url)
 	res, err := http.Get(url)
-	baseSrc := `G:\picture\`
+	baseSrc := `F:\picture\`
+	_, isExistErr := os.Stat(baseSrc)
+	if os.IsNotExist(isExistErr) {
+		err := os.Mkdir(baseSrc, os.ModePerm)
+		if err != nil {
+			return false
+		}
+	}
 	HandlerError(err, "http.get.url")
 	defer res.Body.Close()
 	bytes, err := ioutil.ReadAll(res.Body)
@@ -55,7 +64,8 @@ func main() {
 	// 2. 爬虫协程
 	for i := 1; i < 27; i++ {
 		waitGroup.Add(1)
-		go getImgUrls("https://www.bizhizu.cn/shouji/tag-%E5%8F%AF%E7%88%B1/" + strconv.Itoa(i) + ".html")
+		go getImgUrls("https://www.bizhizu.cn/shouji")
+		//go getImgUrls("https://www.bizhizu.cn/shouji/tag-%E5%8F%AF%E7%88%B1/" + strconv.Itoa(i) + ".html")
 	}
 	// 3. 任务统计协程 统计26个协程是否都任务完成, 完成则关闭管道
 	waitGroup.Add(1)

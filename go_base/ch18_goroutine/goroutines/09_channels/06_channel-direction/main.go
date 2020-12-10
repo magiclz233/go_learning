@@ -4,6 +4,10 @@ import "fmt"
 
 func main() {
 	c := incrementer()
+	// 如果这块输出之后 chan c中数据就会为null
+	//for n := range c {
+	//	fmt.Println(n)
+	//}
 	cSum := puller(c)
 	for n := range cSum {
 		fmt.Println(n)
