@@ -19,13 +19,12 @@ func HandlerError(err error, why string) {
 	}
 }
 
-func DownloadFile(url string, fileName string) (ok bool) {
+func DownloadFile(url string, fileName, path string) (ok bool) {
 	fmt.Println(url)
 	res, err := http.Get(url)
-	baseSrc := "F:\\picture\\"
-	_, isExistErr := os.Stat(baseSrc)
+	_, isExistErr := os.Stat(path)
 	if os.IsNotExist(isExistErr) {
-		err := os.Mkdir(baseSrc, os.ModePerm)
+		err := os.Mkdir(path, os.ModePerm)
 		if err != nil {
 			return false
 		}
@@ -34,7 +33,7 @@ func DownloadFile(url string, fileName string) (ok bool) {
 	defer res.Body.Close()
 	bytes, err := ioutil.ReadAll(res.Body)
 	HandlerError(err, "res.Body")
-	fileName = baseSrc + fileName
+	fileName = path + fileName
 	err = ioutil.WriteFile(fileName, bytes, 0666)
 	if err != nil {
 		return false
@@ -64,35 +63,41 @@ func main() {
 	flag.StringVar(&url, "url", "", "图片网站链接")
 	str, _ := os.Getwd()
 	fmt.Println("当前文件路径: " + str)
-	flag.StringVar(&path, "path", str, "本地下载地址")
-
+	flag.StringVar(&path, "path", str+"images", "本地下载地址")
+	flag.Parse()
 	if url == "" {
 		fmt.Println("网站链接为空!")
 		return
 	}
-	// 1. 初始化管道
-	chanImageUrls = make(chan string, 1000000)
-	chanTask = make(chan string, 26)
-	// 2. 爬虫协程
-	for i := 1; i < 27; i++ {
-		waitGroup.Add(1)
-		go getImgUrls(url)
-		//go getImgUrls("https://www.bizhizu.cn/shouji/tag-%E5%8F%AF%E7%88%B1/" + strconv.Itoa(i) + ".html")
+	if !strings.HasSuffix(path, "\\") {
+		path = path + "\\"
 	}
+	fmt.Println("图片网站链接: " + url)
+	fmt.Println("本地下载地址: " + path)
+
+	// 1. 初始化管道
+	chanImageUrls = make(chan string)
+	chanTask = make(chan string)
+	// 2. 爬虫协程
+	//for i := 1; i < 27; i++ {
+	waitGroup.Add(1)
+	go getImgUrls(url)
+	//go getImgUrls("https://www.bizhizu.cn/shouji/tag-%E5%8F%AF%E7%88%B1/" + strconv.Itoa(i) + ".html")
+	//}
 	// 3. 任务统计协程 统计26个协程是否都任务完成, 完成则关闭管道
 	waitGroup.Add(1)
 	go CheckOK()
 	for i := 0; i < 5; i++ {
 		waitGroup.Add(1)
-		go DownloadImg()
+		go DownloadImg(path)
 	}
 	waitGroup.Wait()
 }
 
-func DownloadImg() {
+func DownloadImg(path string) {
 	for url := range chanImageUrls {
 		fileName := GetFileNameFromUrl(url)
-		ok := DownloadFile(url, fileName)
+		ok := DownloadFile(url, fileName, path)
 		if ok {
 			fmt.Printf("%s 下载成功!!!!\n", fileName)
 		} else {
@@ -120,7 +125,7 @@ func CheckOK() {
 		url := <-chanTask
 		fmt.Printf("%s 爬取成功\n", url)
 		count++
-		if count == 26 {
+		if count == 1 {
 			close(chanImageUrls)
 			break
 		}
@@ -147,7 +152,7 @@ func getImages(url string) (urls []string) {
 	pageStr := GetPageStr(url)
 	re := regexp.MustCompile(reImg)
 	results := re.FindAllStringSubmatch(pageStr, -1)
-	fmt.Printf("找到的结果数量: %v\n, 分别为: %v\n", len(results), results)
+	//fmt.Printf("找到的结果数量: %v\n, 分别为: %v\n", len(results), results)
 	for _, result := range results {
 		url = result[0]
 		urls = append(urls, url)
