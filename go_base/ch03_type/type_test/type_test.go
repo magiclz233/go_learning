@@ -7,6 +7,12 @@ import "testing"
 //自定义别名类型
 type MyInt int64
 
+func TestOne(t *testing.T) {
+	a := 1
+	b := 2
+	t.Log(a, b)
+}
+
 //go的类型转换
 func TestImplicit(t *testing.T) {
 	var a int = 1
