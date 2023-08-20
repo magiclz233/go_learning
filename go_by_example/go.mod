@@ -1,3 +1,3 @@
-module go_learning/go_by_example
+module go_by_example
 
-go 1.15
+go 1.21.0

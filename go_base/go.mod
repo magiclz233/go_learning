@@ -1,5 +1,5 @@
-module go_learning/go_base
+module go_base
 
-go 1.14
+go 1.21.0
 
-require github.com/easierway/concurrent_map v0.0.0-20190103024436-7073b0dd7e95
+require github.com/easierway/concurrent_map v1.0.0

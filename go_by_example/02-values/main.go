@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("string")
+	s := "1"
+	fmt.Println("string", s)
 
 	fmt.Println("1+2=", 1+2)
 

@@ -11,9 +11,9 @@
 
 ## base
 
-本项目使用的go版本为1.14, 建议使用1.13以上版本, 编辑器使用的是GoLand, 其他idea,vscode也可以
+本项目建议使用1.13以上版本, 编辑器使用的是GoLand, 其他idea,vscode也可以
 
-其中 go_base基础模块使用的GOPATH形式练习, go_web使用go mod形式
+其中 go_base基础模块使用的GOPATH形式练习, go_web使用go mod形式，推荐全部使用go mod形式
 
 ## go_base
 
