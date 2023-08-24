@@ -1,6 +1,9 @@
 package condition
 
-import "testing"
+import (
+	"strconv"
+	"testing"
+)
 
 func TestSwitch1(t *testing.T) {
 	for i := 0; i <= 5; i++ {
@@ -10,12 +13,20 @@ func TestSwitch1(t *testing.T) {
 		case 1, 3:
 			t.Logf("奇数 %d", i)
 		default:
-			t.Log("不在0-4中间的数" + string(i))
+			t.Log("不在0-4中间的数" + strconv.Itoa(i))
+		}
+	}
+}
+func TestSwitch2(t *testing.T) {
+	for i := 0; i < 5; i++ {
+		switch i {
+		case 1, 2, 3:
+			t.Logf("123")
 		}
 	}
 }
 
-//这里的switch没有条件  和if-else if-else功能相同
+// 这里的switch没有条件  和if-else if-else功能相同
 func TestSwitchCaseCondition(t *testing.T) {
 	for i := 0; i <= 5; i++ {
 		switch {
