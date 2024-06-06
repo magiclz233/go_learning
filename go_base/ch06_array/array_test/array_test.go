@@ -2,7 +2,7 @@ package array_test
 
 import "testing"
 
-//声明数组
+// 声明数组
 func TestArray1(t *testing.T) {
 	var arr [3]int
 	arr1 := [4]int{1, 2, 3, 4}
@@ -12,7 +12,7 @@ func TestArray1(t *testing.T) {
 	t.Log(arr, arr1, arr2, arr3, arr4)
 }
 
-//数组的循环展示
+// 数组的循环展示
 func TestArray2(t *testing.T) {
 	arr1 := [...]int{1, 2, 3, 4, 5}
 	//普通for循环
@@ -27,9 +27,12 @@ func TestArray2(t *testing.T) {
 	for _, e := range arr1 {
 		t.Log(e)
 	}
+	for index, a := range arr1 {
+		t.Log(index, a)
+	}
 }
 
-//数组的截取
+// 数组的截取
 func TestArray3(t *testing.T) {
 	arr := [...]int{1, 2, 3, 4, 5, 7}
 

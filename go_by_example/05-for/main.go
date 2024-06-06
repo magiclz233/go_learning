@@ -1,13 +1,11 @@
 package main
 
 import (
-	"testing"
+	"fmt"
 )
 
-func TestFor(t *testing.T) {
-	i := 1
-	for i < 3 {
-		t.Logf("i值：%d", i)
-		i++
+func main() {
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
 	}
 }

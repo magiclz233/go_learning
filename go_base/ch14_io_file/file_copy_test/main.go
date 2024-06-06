@@ -9,7 +9,7 @@ import (
 
 func main() {
 
-	CopyFile()
+	//CopyFile()
 }
 
 func CopyFile(oldName, newName string) (written int64, err error) {
