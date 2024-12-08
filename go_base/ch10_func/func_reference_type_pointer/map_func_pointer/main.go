@@ -9,6 +9,10 @@ func main() {
 	fmt.Println(m["magic"])
 }
 
+func cat(z map[string]int) {
+
+}
+
 func changMe(z map[string]int) {
 	z["magic"] = 44
 }

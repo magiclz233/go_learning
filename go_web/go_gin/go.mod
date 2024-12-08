@@ -1,4 +1,4 @@
-module go_gin
+module go_learning/go_web/go_gin
 
 go 1.21.0
 
