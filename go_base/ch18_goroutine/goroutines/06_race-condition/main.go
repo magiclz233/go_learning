@@ -37,6 +37,6 @@ func incrementer(s string) {
 	如何解决: 1. sync.Mutex 互斥锁
 			2. atomic 原子类
 */
-// go run -race main.go
+// go run -race struct_two_test.go
 // vs
-// go run main.go
+// go run struct_two_test.go
