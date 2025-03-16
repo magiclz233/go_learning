@@ -2,9 +2,9 @@ package client
 
 import (
 	"fmt"
+	"go_base/ch16_package/series"
 	"testing"
 )
-import "go_learning/go_base/ch16_package/series"
 
 func TestPackage(t *testing.T) {
 	fibList := make([]int, 0)
