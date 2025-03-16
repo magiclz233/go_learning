@@ -58,7 +58,7 @@ func main() {
 	{
 		r.POST("/create", userHandler.CreateUser)
 		r.GET("/get/:id", userHandler.GetUserByID)
-		r.GET("/getUserList", userHandler.GetUserList)
+		r.GET("/get/list", userHandler.GetUserList)
 		r.PUT("/update/:id", userHandler.UpdateUser)
 		r.DELETE("/delete/:id", userHandler.DeleteUser)
 	}
