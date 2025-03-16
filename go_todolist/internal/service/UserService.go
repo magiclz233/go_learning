@@ -18,14 +18,7 @@ func (u *UserService) CreateUser(user *data.User) error {
 }
 
 func (u *UserService) UpdateUser(user *data.User) error {
-	    // 先获取原有记录
-		var oldUser data.User
-		if err := u.db.First(&oldUser, user.ID).Error; err != nil {
-			return err
-		}
-	
-		// 只更新非零值字段，保留原有的 CreatedAt 等字段
-		return u.db.Model(&oldUser).Updates(user).Error
+	return u.db.Save(user).Error
 }
 
 func (u *UserService) DeleteUser(id uint) error {
@@ -46,4 +39,3 @@ func (u *UserService) GetUserByID(id uint) (*data.User, error) {
 	}
 	return &user, nil
 }
-

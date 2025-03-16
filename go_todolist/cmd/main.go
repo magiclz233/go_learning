@@ -23,27 +23,27 @@ func main() {
 
 	// 判断是否有PostgreSQL配置
 	if cfg.PostgreSQL.Host != "" {
-		        // 使用PostgreSQL
-				dsn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=%s",
-				cfg.PostgreSQL.Host,
-				cfg.PostgreSQL.Port,
-				cfg.PostgreSQL.User,
-				cfg.PostgreSQL.Password,
-				cfg.PostgreSQL.DBName,
-				cfg.PostgreSQL.SSLMode,
-			)
+		// 使用PostgreSQL
+		dsn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=%s",
+			cfg.PostgreSQL.Host,
+			cfg.PostgreSQL.Port,
+			cfg.PostgreSQL.User,
+			cfg.PostgreSQL.Password,
+			cfg.PostgreSQL.DBName,
+			cfg.PostgreSQL.SSLMode,
+		)
 		db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
-        if err != nil {
-            log.Fatal("failed to connect postgresql: ", err)
-        }
-        log.Println("使用 PostgreSQL 数据库")
+		if err != nil {
+			log.Fatal("failed to connect postgresql: ", err)
+		}
+		log.Println("使用 PostgreSQL 数据库")
 	} else {
-		 // 使用SQLite
-		 db, err = gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
-		 if err != nil {
-			 log.Fatal("failed to connect sqlite: ", err)
-		 }
-		 log.Println("使用 SQLite 数据库")
+		// 使用SQLite
+		db, err = gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+		if err != nil {
+			log.Fatal("failed to connect sqlite: ", err)
+		}
+		log.Println("使用 SQLite 数据库")
 	}
 
 	// 迁移 schema
@@ -58,7 +58,7 @@ func main() {
 	{
 		r.POST("/create", userHandler.CreateUser)
 		r.GET("/get/:id", userHandler.GetUserByID)
-		r.GET("/get/list", userHandler.GetUserList)
+		r.GET("/getUserList", userHandler.GetUserList)
 		r.PUT("/update/:id", userHandler.UpdateUser)
 		r.DELETE("/delete/:id", userHandler.DeleteUser)
 	}
