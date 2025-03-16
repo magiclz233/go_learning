@@ -3,6 +3,7 @@
 一个用来学习Go语言的仓库,包含了:
 
 * [go_base](https://github.com/magiclz233/go_learning/tree/master/go_base) Go的基础语法部分
+* [go_todolist](https://github.com/magiclz233/go_learning/tree/master/go_todolist) Go的简单项目(一个简单的todolist)
 * [go_web](https://github.com/magiclz233/go_learning/tree/master/go_web) Go Web以及web框架学习
     * [echo](https://github.com/magiclz233/go_learning/tree/master/go_web/go_echo) echo框架学习
     * [gin](https://github.com/magiclz233/go_learning/tree/master/go_web/go_gin) gin框架学习
