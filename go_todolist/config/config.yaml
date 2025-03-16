@@ -1,0 +1,14 @@
+redis:
+  host: "192.168.0.105"
+  port: 16379
+  db: 0
+  password: ""
+
+
+postgresql:
+  host: "192.168.0.105"
+  port: 5431
+  user: "halo"
+  password: "openpostgresql"
+  dbname: "go_todolist"
+  sslmode: "disable"

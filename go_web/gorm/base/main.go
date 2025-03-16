@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 	"github.com/glebarez/sqlite"
 	"gorm.io/gorm"
 )
