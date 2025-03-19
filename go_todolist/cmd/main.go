@@ -47,20 +47,26 @@ func main() {
 	}
 
 	// 迁移 schema
-	db.AutoMigrate(&data.User{})
+	db.AutoMigrate(&data.User{}, &data.File{})
 
 	userService := service.NewUserService(db)
 	userHandler := server.NewUserHandler(userService)
-
+	fileService := service.NewFileService(db)
+	fileHandler := server.NewFileHandler(fileService)
 	r := gin.Default()
 
-	r.Group("/user")
+	userGroup := r.Group("/user")
 	{
-		r.POST("/create", userHandler.CreateUser)
-		r.GET("/get/:id", userHandler.GetUserByID)
-		r.GET("/getUserList", userHandler.GetUserList)
-		r.PUT("/update/:id", userHandler.UpdateUser)
-		r.DELETE("/delete/:id", userHandler.DeleteUser)
+		userGroup.POST("/create", userHandler.CreateUser)
+		userGroup.GET("/get/:id", userHandler.GetUserByID)
+		userGroup.GET("/getUserList", userHandler.GetUserList)
+		userGroup.PUT("/update/:id", userHandler.UpdateUser)
+		userGroup.DELETE("/delete/:id", userHandler.DeleteUser)
+	}
+
+	fileGroup := r.Group("/file")
+	{
+		fileGroup.POST("/upload", fileHandler.Upload)
 	}
 	r.Run(":8080")
 }
