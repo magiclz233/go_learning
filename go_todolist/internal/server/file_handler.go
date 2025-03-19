@@ -2,12 +2,14 @@ package server
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"go_learning/todolist/internal/data"
 	"go_learning/todolist/internal/service"
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
+
+	"github.com/gin-gonic/gin"
 )
 
 type FileHandler struct {
@@ -67,6 +69,62 @@ func (f *FileHandler) Upload(c *gin.Context) {
 		"filename": filename,
 		"size":     file.Size,
 		"path":     savePath,
+	})
+}
+
+func (f *FileHandler) Download(c *gin.Context) {
+    // 从路径参数获取fileID并转换为uint
+    fileID, err := strconv.Atoi(c.Param("fileID"))
+    if err != nil {
+        c.JSON(http.StatusBadRequest, gin.H{
+            "error": "无效的文件ID",
+        })
+        return
+    }
+    // 从数据库获取文件信息
+    file, err := f.fileService.GetFile(fileID)
+    if err != nil {
+        c.JSON(http.StatusNotFound, gin.H{
+            "error": "文件不存在",
+        })
+        return
+    }
+
+    // 检查文件是否存在
+    if _, err := os.Stat(file.FilePath); os.IsNotExist(err) {
+        c.JSON(http.StatusNotFound, gin.H{
+            "error": "文件不存在",
+        })
+        return
+    }
+
+    // 设置下载文件名
+    c.Header("Content-Disposition", fmt.Sprintf("attachment; filename=%s", file.FileName))
+    // 下载文件
+    c.File(file.FilePath)
+}
+
+func (f *FileHandler) GetFileMsg(c *gin.Context) {
+	    // 从路径参数获取fileID并转换为整数
+		fileID, err := strconv.Atoi(c.Param("fileID"))
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": "无效的文件ID",
+			})
+			return
+		}
+	file, err := f.fileService.GetFile(fileID)
+	if err!= nil {
+		c.JSON(http.StatusNotFound, gin.H{
+			"error": "文件不存在",
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"message":  "文件信息获取成功",
+		"filename": file.FileName,
+		"size":     file.FileSize,
+		"path":     file.FilePath,
 	})
 }
 

@@ -14,7 +14,7 @@ func NewFileService(db *gorm.DB) *FileService {
 	return &FileService{DB: db}
 }
 
-func (f *FileService) GetFile(fileID uint) (*data.File, error) {
+func (f *FileService) GetFile(fileID int) (*data.File, error) {
 	var file data.File
 	if err := f.DB.First(&file, fileID).Error; err != nil {
 		return nil, err
