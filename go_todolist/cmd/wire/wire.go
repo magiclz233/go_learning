@@ -1,7 +1,7 @@
 //go:build wireinject
 // +build wireinject
 
-package injector
+package wire
 
 import (
     "go_learning/todolist/internal/server"
