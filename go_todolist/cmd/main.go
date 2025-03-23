@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"go_learning/todolist/cmd/wire"
 	"go_learning/todolist/config"
 	"go_learning/todolist/internal/data"
-	"go_learning/todolist/wire/injector"
 	"log"
 
 	"github.com/glebarez/sqlite"
@@ -21,7 +21,7 @@ func main() {
    	db.AutoMigrate(&data.User{}, &data.File{})
 
     // 使用 wire 生成的初始化函数
-	server, err := injector.InitializeServer(db)
+	server, err := wire.InitializeServer(db)
     if err != nil {
         log.Fatal(err)
     }

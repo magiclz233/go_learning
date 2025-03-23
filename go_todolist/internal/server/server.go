@@ -39,11 +39,20 @@ func (s *Server) InitRouter() *gin.Engine {
 		userGroup.DELETE("/delete/:id", s.userHandler.DeleteUser)
 	}
 
-	fileGroup := r.Group("/file")
+	// 文件相关路由
+	fileGroup := r.Group("/api/files")
+	// 如果有认证中间件，可以在这里添加
+	// fileGroup.Use(middleware.AuthMiddleware())
 	{
-		fileGroup.POST("/upload", s.fileHandler.Upload)
-		fileGroup.GET("/download/:fileID", s.fileHandler.Download)
-		fileGroup.GET("/info/:fileID", s.fileHandler.GetFileMsg)
+		// 基本文件操作
+		fileGroup.POST("/upload", s.fileHandler.Upload) // 上传文件
+		fileGroup.DELETE("/:id", s.fileHandler.Delete)  // 删除文件
+		fileGroup.GET("/:id", s.fileHandler.Get)        // 获取文件信息
+		fileGroup.GET("/list", s.fileHandler.List)      // 获取文件列表
+
+		// 保留原有的API兼容性
+		fileGroup.GET("/download/:fileID", s.fileHandler.Download) // 下载文件
+		fileGroup.GET("/info/:fileID", s.fileHandler.GetFileMsg)   // 获取文件信息
 	}
 
 	return r
