@@ -48,8 +48,8 @@ func inputFileBuf() {
 }
 
 func main() {
-	//inputFile()
-	inputFileBuf()
+	inputFile()
+	// inputFileBuf()
 	//outPutFile()
 	//Fscanln()
 }
